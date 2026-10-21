@@ -32,3 +32,7 @@ This version intentionally does not use scroll-reveal animations or any JavaScri
 2. Upload the CONTENTS of `cali-performance-detailing-stable` to the root of the repository that publishes the site. `index.html`, `style.css`, `script.js`, and `assets/` must sit together at the published root. Do not upload only the outer folder as a nested folder unless your Pages settings publish that exact folder.
 3. Commit the files, wait for the Pages deployment to finish, then open the live URL in a private/incognito tab or hard-refresh.
 4. If the old version still appears, check that Pages is publishing the branch/folder you updated and that the URL points to that repository.
+
+## Scroll animation reliability
+
+Scroll reveals are progressively enhanced: all content is visible by default. The reveal styling is activated only after the IntersectionObserver is successfully installed. Browsers with reduced motion keep everything visible, and a 3.2-second fail-safe reveals any elements that have not been observed. If the setup throws an error, the page fails open and remains readable.
